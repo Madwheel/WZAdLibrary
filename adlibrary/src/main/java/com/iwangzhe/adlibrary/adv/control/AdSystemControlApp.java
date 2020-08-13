@@ -230,12 +230,13 @@ public class AdSystemControlApp extends ControlApp {
             return null;
         }
         JAdvInfo jAdvInfo = mMain.pModel.getAdvInfoMap().get(pageKey + posKey);
-        int advStyle = jAdvInfo.getPositionInfo().getAdvStyle();
-        return getSliderView(context, listener, jAdvInfo);
-//        if (advStyle == 4) {
-//        } else if (advStyle == 6) {//开屏广告
+        int advType = jAdvInfo.getPositionInfo().getAdvType();
+        if (advType == 4) {
+            return getSliderView(context, listener, jAdvInfo);
+        }
+//        else if (advType == 2) {//开屏广告
 //        }
-//        return null;
+        return null;
     }
 
     @NonNull
